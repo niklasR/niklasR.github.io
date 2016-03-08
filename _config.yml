@@ -1,2 +1,4 @@
-name: Niks notes 
+name: Nik's notes 
 markdown: kramdown
+permalink: /blog/:year/:month/:day/:title
+
