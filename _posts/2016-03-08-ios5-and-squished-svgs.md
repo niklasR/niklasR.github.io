@@ -20,7 +20,11 @@ Investigating the DOM with firebug lite showed that the `NaturalWidth` and `Natu
 
 Not sure whether the wrongly shown images are due to [this webkit bug](https://bugs.webkit.org/show_bug.cgi?id=82489), probably not, but reading through it brought me close to the solution...
 
-It's in the svg code itself! And, hey ho, when looking at the source for the old images I saw indeed `height` and `width` values, which aren't present in the new ones. Quickly added them, et voilà, it works.
+It's in the svg code itself! And, hey ho, when looking at the source for the old images I saw indeed `height` and `width` values, which aren't present in the new ones. Quickly added them, et voilà, it works:
+
+```xml
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0" y="0" viewBox="0 0 960 960" width="960" height="960" enable-background="new 0 0 960 960" xml:space="preserve">
+```
 
 Now I can rest in peace and blame both Adobe for (presumably) changing the way Illustrator saves SVGs when you 'Export', and Apple for, well, for having this 'bug' in iOS 5. Shame on you, both!
 
