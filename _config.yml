@@ -1,4 +1,23 @@
-name: Nik's notes 
-markdown: kramdown
+name: Nik's notes
 permalink: /blog/:year/:month/:day/:title
+paginate: 10 # pagination based on number of posts
+paginate_path: "page:num"
+exclude: ["README.md"] # files to exclude
+highlighter: pygments
+markdown: kramdown
 
+defaults:
+  -
+    scope:
+      path: "" # empty string for all files
+    values:
+      title: dbyll
+
+rss_path: feed.xml
+categories_path: categories.html
+tags_path: tags.html
+
+BASE_PATH:
+
+gems:
+  - jekyll-paginate
