@@ -6,12 +6,23 @@ exclude: ["README.md"] # files to exclude
 highlighter: rouge
 markdown: kramdown
 
+description: Nik's Notes
+author:
+  name: Nik Rahmel
+  email: niklas@rahmel.eu
+  github: niklasR
+  twitter: niklasRen
+  linkedin: niklasr
+  bio: Young and keen graduate software engineer
+  email_md5: DE6247892BB3956D13C34A49785845BA
+
+
 defaults:
   -
     scope:
       path: "" # empty string for all files
     values:
-      title: dbyll
+      title: Nik's Notes
 
 rss_path: feed.xml
 categories_path: categories.html
