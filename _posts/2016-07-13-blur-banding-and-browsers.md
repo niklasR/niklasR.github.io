@@ -11,7 +11,8 @@ Anyway, for this feature our UX people really wanted to blur images, because tha
 So we looked at alternatives. Client side we looked at drawing in a HTML canvas and putting our image inside of an SVG with a filter on. The drawback of the HTML canvas is that there's no simple way to blur without much code - we'd have to package our own blur algorithm ([this one ](http://www.quasimondo.com/StackBlurForCanvas/StackBlur.js) seems to pretty popular, coming in at 6kB minified), we don't really want to do that for reasons.
 
 So SVG blur is the other client-side solution, which is also used by other teams within the organisation, but they have quite a different set of requirements. And it's pretty simple, look at that:
-```
+
+```html
 <svg>
   <defs>
     <filter id="svgBlur">
@@ -32,12 +33,14 @@ This made us think about alternatives, and our infrastructure - and our infrastr
 
 One of those commands is 'blur', and it looks beautiful. And because there's no client-side operation, it's supported in any browser that can display JPEGs - which is definitely a superset of the browsers we care about so yay :)
 
-To just illustrate the differences between a GraphicsMagick blur and an SVG blur in our case and in this case in my specific configuration on my machine, here two screenshots:
+To just illustrate the differences between a GraphicsMagick blur and an SVG blur in our case and in this case in my specific configuration on my machine, here two screenshots (you might want to open them in a new tab/view them full sized):
 
 SVG Gaussian Blur:
+
 ![SVG Gaussian Blur](//niklasr.github.io/assets/media/blur_svg.png "SVG Gaussian Blur")
 
 GraphicsMagick Blur:
+
 ![GraphicsMagick Blur](//niklasr.github.io/assets/media/blur_imagechef2.png "GraphicsMagick Blur")
 
 N
